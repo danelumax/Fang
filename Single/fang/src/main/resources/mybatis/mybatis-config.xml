@@ -12,7 +12,8 @@
          <!-- 事务超时时间 -->
          <setting name="defaultStatementTimeout" value="600"/>
     </settings>
-    
+
+
     
     <typeAliases>
        <typeAlias type="com.daniel.fang.model.User" alias="user" />

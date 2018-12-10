@@ -13,7 +13,7 @@ public class BeanHelper {
   
   private static final String createTimeKey  = "createTime";
  
-  
+  //Provide a common way to set default value for any object if the property type is String or Number.
   public static <T> void setDefaultProp(T target,Class<T> clazz) {
     PropertyDescriptor[] descriptors = PropertyUtils.getPropertyDescriptors(clazz);
     for (PropertyDescriptor propertyDescriptor : descriptors) {
@@ -39,7 +39,7 @@ public class BeanHelper {
       }
     }
   }
-  
+
   public static <T> void onUpdate(T target){
     try {
       PropertyUtils.setProperty(target, updateTimeKey, System.currentTimeMillis());
@@ -47,7 +47,8 @@ public class BeanHelper {
       return;
     }
   }
-  
+
+
   private static <T> void innerDefault(T target, Class<?> clazz, PropertyDescriptor[] descriptors) {
 	    for (PropertyDescriptor propertyDescriptor : descriptors) {
 	      String fieldName = propertyDescriptor.getName();
@@ -78,7 +79,8 @@ public class BeanHelper {
 	      }
 	    }
 	  }
-  
+
+    //Provide a common way to set default value for any object if the property type is String or Number.
   public static <T> void onInsert(T target){
 	Class<?> clazz = target.getClass();
 	PropertyDescriptor[] descriptors = PropertyUtils.getPropertyDescriptors(clazz);

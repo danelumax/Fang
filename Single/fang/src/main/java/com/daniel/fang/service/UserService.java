@@ -48,7 +48,8 @@ public class UserService {
     }
     BeanHelper.setDefaultProp(account, User.class);
     BeanHelper.onInsert(account);
-    account.setEnable(0);
+    //account.setEnable(0);
+    account.setEnable(1);
     userMapper.insert(account);
     mailService.registerNotify(account.getEmail());
     return true;

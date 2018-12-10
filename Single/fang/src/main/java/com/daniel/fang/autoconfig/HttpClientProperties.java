@@ -2,6 +2,7 @@ package com.daniel.fang.autoconfig;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+//Read configuration file to generate bean.
 @ConfigurationProperties(prefix="spring.httpclient")
 public class HttpClientProperties {
 	
